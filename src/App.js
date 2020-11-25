@@ -1,23 +1,68 @@
-import logo from './logo.svg';
-import './App.css';
+import 'semantic-ui-css/semantic.min.css'
+import { Button, Icon, Label, Menu} from 'semantic-ui-react'
+import MyModal from './MyModal';
+import React from "react";
+
 
 function App() {
+
+  var [openModal, setOpenModal] = React.useState(false);
+
+
+  console.log("modal state", openModal);
+  
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
+       <Menu>
+        <Menu.Item
+          name='editorials'          
+          onClick={()=>console.log("click menu 1")}
         >
-          Learn React
-        </a>
-      </header>
+          Editorials
+        </Menu.Item>
+
+        <Menu.Item
+          name='reviews'
+          
+          onClick={()=>console.log("click menu 2")}
+        >
+          Reviews
+        </Menu.Item>
+
+        <Menu.Item
+          name='upcomingEvents'          
+          onClick={()=>console.log("click menu 3")}
+        >
+          Upcoming Events
+        </Menu.Item>
+      </Menu>
+       <Button as='div' labelPosition='right' onClick={(e,d)=>setOpenModal(true)}>
+      <Button icon>
+        <Icon name='heart' />
+        Like
+      </Button>
+      <Label as='a' basic pointing='left'>
+        2,048
+      </Label>
+    </Button>
+    <Button as='div' labelPosition='left'>
+      <Label as='a' basic pointing='right'>
+        2,048
+      </Label>
+      <Button icon>
+        <Icon name='heart' />
+        Like
+      </Button>
+    </Button>
+    <Button as='div' labelPosition='left'>
+      <Label as='a' basic>
+        2,048
+      </Label>
+      <Button icon>
+        <Icon name='fork' />
+      </Button>
+    </Button>
+    <MyModal visible={openModal} onClose={()=>{console.log("close"); setOpenModal(false);}} />
     </div>
   );
 }
