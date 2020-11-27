@@ -20,7 +20,7 @@ function App() {
 
        <Menu>
         <Menu.Item
-          position="left"
+          position="center"
           name='editorials'          
           onClick={()=>console.log("click menu 1") }
         >
@@ -37,7 +37,7 @@ function App() {
         </Menu.Item>
 
         <Menu.Item
-          position="right"
+          position="center"
           name='upcomingEvents'          
           onClick={()=>console.log("click menu 3")}
         >

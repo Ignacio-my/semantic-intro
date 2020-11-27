@@ -21,7 +21,7 @@ export default function MyModal(props){
           >
             <Header icon>
               <Icon name='archive' />
-              Archive Old Messages
+              Prueba
             </Header>
             <Modal.Content>
               <p>
@@ -33,7 +33,7 @@ export default function MyModal(props){
                 <Icon name='remove' /> No
               </Button>
               <Button color='green' inverted onClick={() => onClose()}>
-                <Icon name='checkmark' /> Yes
+                <Icon name='checkmark' /> Si
               </Button>
             </Modal.Actions>
           </Modal>)
